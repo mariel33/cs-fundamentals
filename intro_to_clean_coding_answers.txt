@@ -1,0 +1,123 @@
+1. Clean coding is ensuring that your code is easy to read, easy to maintain, and simple. 
+This is possible through a number of good practices such as DRY, good naming conventions, and SRP. 
+Clean coding is important to use when working with other developers so they can easily understand your code, in case they need to make changes. 
+It's also easier to maintain and debug when your code is clean.  
+
+2. Many objects in the hospital rely on computers. 
+Heart rate monitors and X-ray machines are used everyday to help detect and prevent life-threatening complications.
+If the code on these systems were not created to an acceptable standard, a patient could have heart problems that were not detected and die, or a tumor or cancer would go undetected.
+
+3. I would not consider this to be clean coding because of the excessive use of comments, the weak variable and function names and lack of nesting.
+FUNCTION convertDegrees(tempNow, unit)               
+ IF unit = "F" THEN               
+    SET temp to (tempNow−32) * (5/9)      
+    PRINT temp + "ceclius"                    
+ ELSE IF unit = "C" THEN          
+    SET temp to tempNow * 1.8000 + 32.00 
+    PRINT temp + "fahrenheit"                   
+ END IF
+END FUNCTION
+
+4. I would consider it clean code for the most part because it is easily readable and uses good naming methods. I would only move "PRINT percentage" up.
+
+FUNCTION calcPercent(sum, total)
+ IF NOT(total = 0) THEN
+     SET percentage to sum / total * 100
+     PRINT percentage
+ ELSE
+   PRINT "Sorry, cannot divide by 0"
+ END IF
+
+END FUNCTION
+
+5.
+a) 
+FUNCTION checkOutCustomer(subTotal, discountRate, paymentType)
+   SET totalDue to subTotal * discountRate + (subTotal * tax)
+   PRINT "Your total due is: + totalDue"
+
+   IF paymentType = 'CASH' THEN
+       CALL getPayment RETURNING amount
+       PRINT "Change due: + amount - totalDue"
+   ELSE IF paymentType = 'CREDIT CARD' THEN
+       CALL getPayment RETURNING amount
+       PRINT "Your credit card has been charged: + totalDue"
+   END IF
+END FUNCTION
+
+b)
+FUNCTION checkoutBook(book, guest)
+    IF guest.hasOverdueBooks OR guest.outstandingFees > 0 OR NOT(guest.accounActive THEN
+        PRINT "Unable to check out book."
+    ELSE IF guest.accountActive
+        APPEND book to guest.books
+        SET book.status to "Checked Out"
+        PRINT "Your books have been issued."
+    END IF
+END FUNCTION
+
+c)
+CLASS BankOffers
+  FUNCTION checkStatus
+     IF NOT(customer.hasCheckingAccount) THEN
+         CALL offerCheckingAccount
+  END FUNCTION
+
+  FUNCTION creditCardOffer
+     IF NOT(customer.hasCreditCard) THEN
+         CALL offerCreditCard
+     END
+   END FUNCTION
+END CLASS
+
+CLASS AccountActions
+  FUNCTION deposit(amount)
+     SET balance to balance + amount
+   END FUNCTION
+
+  FUNCTION withdraw(amount)
+     IF balance > amount 
+       SET balance to balance - amount
+     ELSE IF balance < amount
+      print "Insufficient Funds"
+  END FUNCTION
+
+  FUNCTION displayBalance
+     PRINT balance
+  END FUNCTION
+END CLASS
+
+6. 
+function findSquare(nums) {
+    var total = 0;
+    var sumNums = 0;
+    for(let i = 0; i < nums.length; i++) {
+        sumNums = total += nums[i]; 
+    } 
+    if (sumNums % Math.sqrt(sumNums) === 0) {
+        return Math.sqrt(sumNums);
+    }
+    return sumNums;
+}
+
+7. 
+function findDuplicate(numbers){
+    var sortedNumbers = numbers.slice().sort();
+    for(let i = 0; i < sortedNumbers.length; i++){
+        if (sortedNumbers[i + 1] === sortedNumbers[i]) {
+            return true;
+        }
+    } return false;
+}
+
+8. 
+function findAnagram(stringOne, stringTwo) {
+    var cleanString = function(string) {
+        return string.split('').sort().join('');
+    };
+    var cleanStringOne = cleanString(stringOne);
+    var cleanStringTwo = cleanString(stringTwo);
+    if (cleanStringOne === cleanStringTwo) {
+        return true;
+    } return false;
+}
