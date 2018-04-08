@@ -1,0 +1,43 @@
+1. Programmers use pseudocode as a way to brainstorm and express what the code should do, before developing an algorithm.
+2. Nothing would happen if you ran pseudocode on your computer, because it is meant for humans not computers.
+
+Programming Assignment:
+
+1. 
+FUNCTION 
+INPUT numberOne
+INPUT numberTwo
+IF numberOne is greater than numberTwo
+    PRINT numberOne
+IF numberTwo is greater than numberOne
+    PRINT numberTwo
+END FUNCTION
+
+2. 
+FUNCTION
+SET number to 1
+WHILE number is less than 100
+    ADD 1 to number
+ENDWHILE
+PRINT number
+END FUNCTION
+
+3.
+FUNCTION
+INPUT last name
+SEARCH last name in phonebook
+IF last name is found in phonebook
+    PRINT contact information
+ELSE
+    PRINT "contact not found"
+END FUNCTION
+
+4.
+function searchPhonebook(lastName) {
+    var contacts = [];
+    for (let i = 0; i < contacts.length; i++) {
+        if (contacts[i].lastName === lastName) {
+            return contacts[i].information;
+        }
+    } return "Contact not found";
+}
