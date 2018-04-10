@@ -15,7 +15,7 @@ END FUNCTION
 
 2. 
 FUNCTION
-SET number to 1
+SET number to 0
 WHILE number is less than 100
     ADD 1 to number
 ENDWHILE
@@ -33,8 +33,7 @@ ELSE
 END FUNCTION
 
 4.
-function searchPhonebook(lastName) {
-    var contacts = [];
+function searchPhonebook(contacts, lastName) {
     for (let i = 0; i < contacts.length; i++) {
         if (contacts[i].lastName === lastName) {
             return contacts[i].information;
